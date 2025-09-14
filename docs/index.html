@@ -19,11 +19,11 @@
             <a href="index.html" class="topbar-brand">JSL Bombay Dating Photos</a>
             <nav class="topbar-nav">
                 <ul class="topbar-list">
-                    <li class="topbar-item"><a href="meet_juily.html" class="topbar-link">Meet Juily</a></li>
-                    <li class="topbar-item"><a href="contact.html" class="topbar-link">Contact</a></li>
+                    <li class="topbar-item"><a href="#meet_juily" class="topbar-link anchor-link" data-scroll-to="meet_juily">Meet Juily</a></li>
+                    <li class="topbar-item"><a href="#contact" class="topbar-link anchor-link" data-scroll-to="contact">Contact</a></li>
                 </ul>
             </nav>
-            <a href="https://www.jslbombay.com/contact" class="topbar-cta">
+            <a href="#contact" class="topbar-cta anchor-link" data-scroll-to="contact">
                 <span class="topbar-cta-icon">⚡</span>
                 <span class="topbar-cta-text">Book Now</span>
             </a>
@@ -39,7 +39,7 @@
                 <h2 class="widescreen-title">Get better matches</h2>
                 <p class="widescreen-description">Better pics = more matches 📸✨ We'll make you irresistible 💫</p>
                 <div class="widescreen-actions">
-                    <a href="https://www.jslbombay.com/contact" class="widescreen-button widescreen-button-primary">Meet Juily</a>
+                    <a href="#meet_juily" class="widescreen-button widescreen-button-primary anchor-link" data-scroll-to="meet_juily">Meet Juily</a>
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="https://www.jslbombay.com/contact" class="showcase-button">Book A Time Today</a>
+                <a href="#contact" class="showcase-button anchor-link" data-scroll-to="contact">Book A Time Today</a>
             </div>
         </div>
     </section>
@@ -211,7 +211,7 @@
             </div>
         </div>
     </section>
-    <div class="map-container">
+    <div class="map-container" id="contact">
         <div id="map"></div>
         <div class="overlay-layer">
             <div class="overlay-content">
@@ -251,7 +251,7 @@
         // Add a marker for the specific address
         L.marker([19.1615, 72.8562], { icon: customIcon }).addTo(map);
     </script>
-    <section class="sly-section">
+    <section class="sly-section" id="meet_juily">
         <div class="sly-container">
             <div class="sly-content-wrapper">
                 <div class="sly-image-section">
@@ -280,5 +280,28 @@
             <span class="footer-text">Made by ❤️ in Mumbai.</span>
         </div>
     </footer>
-</body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle anchor link clicks
+    const anchorLinks = document.querySelectorAll('.anchor-link');
+    
+    anchorLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const scrollTo = this.getAttribute('data-scroll-to');
+            const targetElement = document.getElementById(scrollTo);
+            
+            if (targetElement) {
+                // Smooth scroll to the target element
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+</script></body>
 </html>
