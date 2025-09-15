@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSL Bombay Dating Photos</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -12,15 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8HMN6E9Z40"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8HMN6E9Z40');
-</script></head>
+</head>
 <body class="has-topbar">
     <div class="topbar">
         <div class="topbar-container">
@@ -31,10 +24,9 @@
                     <li class="topbar-item"><a href="#contact" class="topbar-link anchor-link" data-scroll-to="contact">Contact</a></li>
                 </ul>
             </nav>
-            <a href="#contact" class="topbar-cta anchor-link" data-scroll-to="contact">
-                <span class="topbar-cta-icon">⚡</span>
-                <span class="topbar-cta-text">Book Now</span>
-            </a>
+            <div class="topbar-cta-wrapper">
+                <a href="#contact" class="sss-button sss-button-cta sss-button-small align-center anchor-link sss-button-icon-lightning" data-scroll-to="contact"><span class="sss-button-text">Book Now</span></a>
+            </div>
         </div>
     </div>
     
@@ -46,9 +38,9 @@
             <div class="widescreen-content">
                 <h2 class="widescreen-title">Get better matches</h2>
                 <p class="widescreen-description">Better pics = more matches 📸✨ We'll make you irresistible 💫</p>
-                <div class="widescreen-actions">
-                    <a href="#meet_juily" class="widescreen-button widescreen-button-primary anchor-link" data-scroll-to="meet_juily">Meet Juily</a>
-                </div>
+                <div class="sss-button-group sss-button-group-center sss-button-group-medium">
+    <a href="#meet_juily" class="sss-button sss-button-primary sss-button-medium align-center sss-button-variant-default"><span class="sss-button-text">Meet Juily</span></a>
+</div>
             </div>
         </div>
     </section>
@@ -83,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#contact" class="showcase-button anchor-link" data-scroll-to="contact">Book A Time Today</a>
+                <a href="#contact" class="sss-button sss-button-gradient sss-button-medium align-center anchor-link" data-scroll-to="contact"><span class="sss-button-text">Book A Time Today</span></a>
             </div>
         </div>
     </section>
@@ -285,7 +277,7 @@
     
     <footer class="site-footer">
         <div class="footer-content">
-            <span class="footer-text">Made by ❤️ in Mumbai.</span>
+            <span class="footer-text">Website by <a href='https://sssstatic.com' target='_blank'>sssstatic</a>.</span>
         </div>
     </footer>
 
