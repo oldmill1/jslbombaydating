@@ -45,7 +45,7 @@
             --card-link-hover: rgb(148, 202, 224);
             --status-unknown-bg: #484f58;
             --status-unknown-text: #f0f6fc;
-            --body-bg-color: #0d1117;
+            --body-bg-color: #f8f9fa;
             --text-color: #f8f9fa;
         }
         
@@ -99,7 +99,7 @@
         }
         /* TopBar Styles - Responsive Color Mode Navigation */
         .topbar {
-            background: var(--body-bg-color);
+            background: #000000;
             border-bottom: 1px solid #333;
             position: fixed;
             top: 0;
