@@ -1235,6 +1235,7 @@
             display: flex;
             align-items: center;
             padding: 4rem;
+            box-sizing: border-box;
             background: linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(0, 0, 0, 0.3) 100%);
         }
         
@@ -1251,6 +1252,7 @@
         .widescreen-content {
             max-width: 600px;
             width: 100%;
+            min-width: 0;
         }
         
         /* Widescreen Title - Original Surfer font */
@@ -1260,9 +1262,10 @@
             font-weight: 400;
             margin: 0 0 1rem 0;
             color: var(--widescreen-text-color, #ffffff);
-            letter-spacing: -0.02em;
+            letter-spacing: 0;
             line-height: 0.9;
             text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+            overflow-wrap: normal;
         }
         
         /* Widescreen Subtitle */
