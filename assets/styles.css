@@ -1311,6 +1311,12 @@
         .widescreen-content .sss-button-group-right {
             justify-content: flex-start;
         }
+
+        .widescreen-content .widescreen-cta-button.sss-button-primary {
+            font-size: 1.25rem;
+            padding: 0.9rem 2.75rem;
+            min-width: 17rem;
+        }
         
         .widescreen-button {
             align-items: center;
@@ -1432,6 +1438,14 @@
             .widescreen-button {
                 width: auto;
                 max-width: 250px;
+            }
+
+            .widescreen-content .widescreen-cta-button.sss-button-primary {
+                font-size: 1.05rem;
+                padding: 0.75rem 1.25rem;
+                min-width: 0;
+                max-width: 100%;
+                white-space: normal;
             }
         }
         
