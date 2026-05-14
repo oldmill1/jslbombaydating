@@ -121,17 +121,27 @@
         }
         
         .topbar-brand {
-            font-family: "Original Surfer", var(--font-primary);
-            font-size: var(--font-size-xl);
+            font-family: "Bodoni Moda", serif;
+            font-size: 1.8rem;
             font-weight: var(--font-weight-bold);
             color: #ffffff;
             text-decoration: none;
-            letter-spacing: 0.5px;
+            letter-spacing: 0;
+            line-height: 0.9;
             margin: 0;
             transition: color 0.2s ease;
             flex-shrink: 0;
             grid-column: 1;
             justify-self: start;
+        }
+
+        .topbar-brand-line {
+            display: block;
+        }
+
+        .topbar-brand-line-muted {
+            color: #8f8f8f;
+            font-weight: var(--font-weight-normal);
         }
         
         .topbar-brand:hover {
@@ -234,7 +244,7 @@
             }
             
             .topbar-brand {
-                font-size: var(--font-size-xl);
+                font-size: 1.65rem;
                 order: 1;
                 flex: 1;
                 text-align: left;
