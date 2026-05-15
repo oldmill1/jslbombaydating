@@ -2099,7 +2099,7 @@
         .slick-section {
             margin: 0; 
             padding: 0; /* Remove padding from section - let container handle it */
-            background-color: #f8f9fa; /* Default background, can be overridden by bgColor */
+            background-color: var(--color-offwhite);
             color: #000; /* Default text color, can be overridden by color property */
             width: 100%; /* Ensure full width background */
         }
@@ -2108,6 +2108,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem 0; /* Move padding to container so content is constrained but background is full width */
+            background-color: var(--color-offwhite);
         }
         
         .slick-content-wrapper {
@@ -2125,6 +2126,7 @@
         /* Header styles */
         .slick-header {
             margin-bottom: 50px;
+            text-align: center;
         }
         
         .slick-subtitle {
@@ -2141,6 +2143,7 @@
             font-weight: 700;
             color: inherit; /* Inherit color from parent section */
             line-height: 1.2;
+            text-align: center;
             margin-bottom: 0;
         }
         
@@ -2164,6 +2167,9 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            padding: 2rem;
+            background-color: var(--color-offwhite);
+            border-radius: 14px;
         }
         
         .slick-benefit-icon {
@@ -2242,6 +2248,7 @@
             
             .slick-benefit-item {
                 gap: 12px;
+                padding: 1.5rem;
             }
             
             .slick-benefit-icon {
@@ -2280,6 +2287,7 @@
             
             .slick-benefit-item {
                 gap: 10px;
+                padding: 1.25rem;
             }
             
             .slick-benefit-icon {
