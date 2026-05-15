@@ -866,6 +866,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
+    white-space: nowrap;
 }
 
 .footer-left {
@@ -897,10 +898,10 @@
     text-decoration: underline;
 }
 
-.footer-rights {
+.site-footer .footer-rights {
     margin: 0;
-    color: #555;
-    font-size: 0.9rem;
+    color: #222;
+    font-size: 0.95rem;
     line-height: 1.4;
     white-space: nowrap;
 }
@@ -1101,6 +1102,7 @@
 
 .site-footer .footer-made-with-love {
     align-self: center;
+    font-family: var(--font-alt);
     margin: 0;
     padding: 0;
     width: auto;
