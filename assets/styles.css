@@ -857,8 +857,8 @@
 }
 
 .site-footer {
-    min-height: 200px;
-    padding: 1rem;
+    min-height: 0;
+    padding: 1.25rem 2rem;
     background-color: var(--color-beige);
     border-radius: 0;
     display: flex;
@@ -870,17 +870,21 @@
 
 .footer-left {
     display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.8rem;
     color: #222;
+    min-width: 0;
 }
 
 .footer-links {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.8rem;
     font-size: 0.95rem;
     line-height: 1.4;
+    white-space: nowrap;
 }
 
 .site-footer .footer-links a {
@@ -898,11 +902,13 @@
     color: #555;
     font-size: 0.9rem;
     line-height: 1.4;
+    white-space: nowrap;
 }
 
 @media (max-width: 640px) {
     .site-footer {
-        min-height: 160px;
+        min-height: 0;
+        padding: 1rem;
         align-items: center;
         flex-direction: row;
         justify-content: space-between;
