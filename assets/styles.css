@@ -1127,6 +1127,8 @@
 .site-footer .footer-made-with-love {
     align-self: center;
     font-family: var(--font-alt);
+    font-weight: 400;
+    color: #222;
     margin: 0;
     padding: 0;
     width: auto;
