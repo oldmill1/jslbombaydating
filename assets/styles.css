@@ -909,14 +909,38 @@
 @media (max-width: 640px) {
     .site-footer {
         min-height: 0;
-        padding: 1rem;
+        padding: 1.25rem 1rem;
         align-items: center;
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.75rem;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .footer-left {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.35rem;
+    }
+
+    .footer-links {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.35rem 1rem;
+        white-space: normal;
+    }
+
+    .site-footer .footer-rights {
+        font-size: 0.85rem;
+        white-space: normal;
     }
 
     .footer-made-with-love {
-        text-align: right;
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -1111,7 +1135,13 @@
 
 @media (max-width: 640px) {
     .site-footer .footer-made-with-love {
-        text-align: right;
+        text-align: center;
+    }
+
+    .site-footer .text-content {
+        display: inline-flex;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
 
