@@ -2242,7 +2242,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 72px;
+            font-size: 62px;
             flex-shrink: 0;
             padding: 0; 
             margin: 0;
@@ -2318,7 +2318,7 @@
             }
             
             .slick-benefit-icon {
-                font-size: 48px;
+                font-size: 62px;
             }
             
             .slick-benefit-title {
@@ -2357,7 +2357,7 @@
             }
             
             .slick-benefit-icon {
-                font-size: 40px;
+                font-size: 62px;
             }
             
             .slick-benefit-title {
