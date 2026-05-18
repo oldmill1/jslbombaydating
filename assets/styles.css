@@ -2131,6 +2131,18 @@ body.policy-modal-open {
             margin: 0;
         }
 
+        .faq-answer a {
+            color: #56633d;
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.16em;
+        }
+
+        .faq-answer a:hover {
+            color: #34401f;
+        }
+
         .faq-cta-button {
             margin-top: 1.75rem;
             padding: 0.65rem 1.5rem;
