@@ -131,12 +131,16 @@
             color: #000000;
             text-decoration: none;
             letter-spacing: 0;
-            line-height: 0.9;
+            line-height: 0.88;
             margin: 0;
             transition: color 0.2s ease;
             flex-shrink: 0;
             grid-column: 1;
             justify-self: start;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.08rem;
         }
 
         .topbar-brand-line {
@@ -145,6 +149,7 @@
 
         .topbar-brand-line-muted {
             color: #4C5259;
+            font-size: 0.58em;
             font-weight: var(--font-weight-normal);
         }
         
@@ -246,6 +251,7 @@
                 order: 1;
                 text-align: center;
                 width: 100%;
+                align-items: center;
             }
             
             .topbar-cta-wrapper {
@@ -1451,10 +1457,13 @@
             transform: translateY(-1px);
         }
         
-        /* Add lightning bolt icon for primary button */
         .widescreen-button-primary::after {
-            content: "⚡";
-            font-size: 18px;
+            content: "";
+            display: inline-block;
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 50%;
+            background: currentColor;
             margin-left: 8px;
         }
         
@@ -1857,11 +1866,14 @@
             padding: 0.65rem 1.5rem;
         }
         
-        .step-emoji {
-            font-size: 2rem;
+        .step-marker {
+            width: 0.7rem;
+            height: 0.7rem;
+            border-radius: 50%;
+            background: var(--color-green);
             margin-right: 1rem;
             flex-shrink: 0;
-            margin-top: 0.2rem;
+            margin-top: 0.55rem;
         }
         
         .step-content {
@@ -2081,8 +2093,9 @@
                 text-align: left;
             }
             
-            .step-emoji {
-                font-size: 1.75rem;
+            .step-marker {
+                width: 0.65rem;
+                height: 0.65rem;
             }
             
             .step-text {
@@ -2115,8 +2128,9 @@
                 font-size: 1rem;
             }
             
-            .step-emoji {
-                font-size: 1.5rem;
+            .step-marker {
+                width: 0.6rem;
+                height: 0.6rem;
                 margin-right: 0.75rem;
             }
             
@@ -2242,10 +2256,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 62px;
+            width: 2rem;
             flex-shrink: 0;
             padding: 0; 
-            margin: 0;
+            margin: 0.85rem 0 0 0;
+            border-top: 2px solid var(--color-green);
         }
         
         .slick-benefit-content {
@@ -2318,7 +2333,7 @@
             }
             
             .slick-benefit-icon {
-                font-size: 62px;
+                width: 1.8rem;
             }
             
             .slick-benefit-title {
@@ -2357,7 +2372,7 @@
             }
             
             .slick-benefit-icon {
-                font-size: 62px;
+                width: 1.6rem;
             }
             
             .slick-benefit-title {
@@ -3573,8 +3588,12 @@
         
         /* Icon-specific styles */
         .sss-button-icon-lightning::after {
-            content: "⚡";
-            font-size: 1.1em;
+            content: "";
+            display: inline-block;
+            width: 0.45em;
+            height: 0.45em;
+            border-radius: 50%;
+            background: currentColor;
             margin-left: 0.5rem;
         }
         
@@ -3585,20 +3604,32 @@
         }
         
         .sss-button-icon-star::after {
-            content: "★";
-            font-size: 1.1em;
+            content: "";
+            display: inline-block;
+            width: 0.45em;
+            height: 0.45em;
+            border-radius: 50%;
+            background: currentColor;
             margin-left: 0.5rem;
         }
         
         .sss-button-icon-heart::after {
-            content: "♥";
-            font-size: 1.1em;
+            content: "";
+            display: inline-block;
+            width: 0.45em;
+            height: 0.45em;
+            border-radius: 50%;
+            background: currentColor;
             margin-left: 0.5rem;
         }
         
         .sss-button-icon-check::after {
-            content: "✓";
-            font-size: 1.1em;
+            content: "";
+            display: inline-block;
+            width: 0.45em;
+            height: 0.45em;
+            border-radius: 50%;
+            background: currentColor;
             margin-left: 0.5rem;
         }
         
