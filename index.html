@@ -249,9 +249,9 @@
         <div class="component-container site-footer">
             <div class="footer-left">
                 <nav class="footer-links" aria-label="Footer links">
-                    <a href="#">Terms</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Cookies</a>
+                    <a href="#terms" data-policy-link="terms">Terms</a>
+                    <a href="#privacy" data-policy-link="privacy">Privacy</a>
+                    <a href="#cookies" data-policy-link="cookies">Cookies</a>
                 </nav>
                 <p class="footer-rights">2026 All rights reserved.</p>
             </div>
@@ -260,5 +260,106 @@
             </p>
         </div>
     </section>
+    <dialog class="policy-dialog" id="policy-dialog" aria-labelledby="policy-dialog-title">
+        <div class="policy-dialog-shell">
+            <div class="policy-dialog-header">
+                <div>
+                    <p class="policy-dialog-kicker">the other to date</p>
+                    <h2 class="policy-dialog-title" id="policy-dialog-title">Policies</h2>
+                </div>
+                <button class="policy-dialog-close" type="button" aria-label="Close policy dialog">x</button>
+            </div>
+            <div class="policy-tabs" role="tablist" aria-label="Policy sections">
+                <button class="policy-tab" type="button" id="policy-tab-terms" role="tab" aria-controls="policy-panel-terms" data-policy-tab="terms">Terms</button>
+                <button class="policy-tab" type="button" id="policy-tab-privacy" role="tab" aria-controls="policy-panel-privacy" data-policy-tab="privacy">Privacy</button>
+                <button class="policy-tab" type="button" id="policy-tab-cookies" role="tab" aria-controls="policy-panel-cookies" data-policy-tab="cookies">Cookies</button>
+            </div>
+            <div class="policy-content">
+                <section class="policy-panel" id="policy-panel-terms" role="tabpanel" aria-labelledby="policy-tab-terms" data-policy-panel="terms">
+                    <h3>Terms and conditions</h3>
+                    <p>By using this website or booking a practice date, you agree to use our service respectfully and honestly. The experience is designed for personal growth and feedback, not as a guarantee of romantic outcomes, introductions, matches, or relationship results.</p>
+                    <p>Bookings, availability, locations, pricing, and service details may change from time to time. We may decline or reschedule a session if needed for safety, suitability, availability, or operational reasons.</p>
+                    <p>You are responsible for the information you provide before and during your session. Please do not share anything unlawful, abusive, or intentionally misleading. Feedback shared during or after a practice date is subjective, private, and intended for your personal use.</p>
+                    <p>To the fullest extent allowed by law, our liability is limited to the amount paid for the relevant service. Nothing on this website should be treated as legal, medical, therapeutic, or financial advice.</p>
+                </section>
+                <section class="policy-panel" id="policy-panel-privacy" role="tabpanel" aria-labelledby="policy-tab-privacy" data-policy-panel="privacy" hidden>
+                    <h3>Privacy policy</h3>
+                    <p>We collect the information you choose to share with us, such as your name, contact details, booking responses, preferences, and context that helps us prepare for your practice date. We use this information to respond to you, schedule sessions, personalize the experience, and improve our service.</p>
+                    <p>We treat personal stories and session details as confidential. We do not sell your personal information. We may share limited information with trusted tools or service providers only when needed for booking, communication, payment, analytics, or site operation.</p>
+                    <p>We keep information only for as long as reasonably necessary for the purposes described here, unless a longer period is required for legal, accounting, safety, or dispute-resolution reasons.</p>
+                    <p>You can contact us to ask for access, correction, or deletion of your personal information, subject to practical and legal limits. Please avoid sending sensitive information unless it is directly relevant to your booking or session.</p>
+                </section>
+                <section class="policy-panel" id="policy-panel-cookies" role="tabpanel" aria-labelledby="policy-tab-cookies" data-policy-panel="cookies" hidden>
+                    <h3>Cookie policy</h3>
+                    <p>This website may use cookies or similar technologies to keep the site working, understand basic usage, remember preferences, and improve the experience. Cookies are small files stored by your browser when you visit a website.</p>
+                    <p>Some cookies may be essential for page performance, forms, security, or embedded services. Others may help us understand which pages are useful, how visitors arrive, and where the site can be improved.</p>
+                    <p>Third-party services, such as booking forms, analytics tools, fonts, or embedded content, may set their own cookies under their own policies. We do not control every cookie placed by those external services.</p>
+                    <p>You can manage or block cookies through your browser settings. Blocking some cookies may affect how parts of the website or booking flow work.</p>
+                </section>
+            </div>
+        </div>
+    </dialog>
+    <script>
+        const policyDialog = document.getElementById('policy-dialog');
+        const policyLinks = document.querySelectorAll('[data-policy-link]');
+        const policyTabs = document.querySelectorAll('[data-policy-tab]');
+        const policyPanels = document.querySelectorAll('[data-policy-panel]');
+        const closePolicyDialog = document.querySelector('.policy-dialog-close');
+
+        function selectPolicyTab(policyName) {
+            policyTabs.forEach((tab) => {
+                const isSelected = tab.dataset.policyTab === policyName;
+                tab.setAttribute('aria-selected', String(isSelected));
+                tab.setAttribute('tabindex', isSelected ? '0' : '-1');
+            });
+
+            policyPanels.forEach((panel) => {
+                panel.hidden = panel.dataset.policyPanel !== policyName;
+            });
+        }
+
+        function openPolicyDialog(policyName) {
+            selectPolicyTab(policyName);
+            policyDialog.showModal();
+            document.body.classList.add('policy-modal-open');
+            document.querySelector(`[data-policy-tab="${policyName}"]`).focus();
+        }
+
+        policyLinks.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                openPolicyDialog(link.dataset.policyLink);
+            });
+        });
+
+        policyTabs.forEach((tab) => {
+            tab.addEventListener('click', () => selectPolicyTab(tab.dataset.policyTab));
+            tab.addEventListener('keydown', (event) => {
+                if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) {
+                    return;
+                }
+
+                event.preventDefault();
+                const currentIndex = Array.from(policyTabs).indexOf(tab);
+                const direction = event.key === 'ArrowRight' ? 1 : -1;
+                const nextIndex = (currentIndex + direction + policyTabs.length) % policyTabs.length;
+                const nextTab = policyTabs[nextIndex];
+                selectPolicyTab(nextTab.dataset.policyTab);
+                nextTab.focus();
+            });
+        });
+
+        closePolicyDialog.addEventListener('click', () => policyDialog.close());
+        policyDialog.addEventListener('click', (event) => {
+            if (event.target === policyDialog) {
+                policyDialog.close();
+            }
+        });
+        policyDialog.addEventListener('close', () => {
+            document.body.classList.remove('policy-modal-open');
+        });
+
+        selectPolicyTab('terms');
+    </script>
 </body>
 </html>
