@@ -872,26 +872,24 @@
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
-    white-space: nowrap;
 }
 
 .footer-left {
     display: flex;
     flex-direction: row;
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 0.8rem;
+    flex-wrap: wrap;
+    gap: 0.45rem 1rem;
     color: #222;
     min-width: 0;
 }
 
 .footer-links {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 0.8rem;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.9rem;
     font-size: 0.95rem;
     line-height: 1.4;
-    white-space: nowrap;
 }
 
 .site-footer .footer-links a {
@@ -926,7 +924,6 @@
         justify-content: center;
         gap: 0.75rem;
         text-align: center;
-        white-space: normal;
     }
 
     .footer-left {
@@ -938,15 +935,12 @@
 
     .footer-links {
         width: 100%;
-        flex-wrap: wrap;
         justify-content: center;
         gap: 0.35rem 1rem;
-        white-space: normal;
     }
 
     .site-footer .footer-rights {
         font-size: 0.85rem;
-        white-space: normal;
     }
 
     .footer-made-with-love {
@@ -1323,9 +1317,11 @@ body.policy-modal-open {
 
 .site-footer .footer-made-with-love {
     align-self: center;
-    font-family: var(--font-alt);
-    font-weight: 400;
-    color: #222;
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #6f716b;
+    line-height: 1.4;
     margin: 0;
     padding: 0;
     width: auto;
@@ -2133,6 +2129,11 @@ body.policy-modal-open {
             font-size: 1rem;
             line-height: 1.6;
             margin: 0;
+        }
+
+        .faq-cta-button {
+            margin-top: 1.75rem;
+            padding: 0.65rem 1.5rem;
         }
         
         /* Call-to-action button - matching primary button style */
