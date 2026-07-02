@@ -118,7 +118,7 @@
             margin: 0 auto;
             padding: 0 2rem;
             display: grid;
-            grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+            grid-template-columns: 1fr auto;
             align-items: center;
             box-sizing: border-box;
             min-height: 70px;
@@ -159,24 +159,11 @@
             color: #f0f0f0;
             text-decoration: none;
         }
-
-        .topbar-status {
-            grid-column: 2;
-            justify-self: center;
-            color: #1a1a1a;
-            font-family: var(--font-primary);
-            font-size: 0.82rem;
-            font-weight: var(--font-weight-semibold);
-            letter-spacing: 0.08em;
-            line-height: 1;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
         
         .topbar-cta-wrapper {
             display: flex;
             align-items: center;
-            grid-column: 3;
+            grid-column: 2;
             justify-self: end;
         }
 
@@ -234,10 +221,6 @@
                 font-size: 1.5rem;
             }
 
-            .topbar-status {
-                font-size: 0.7rem;
-            }
-            
             .topbar-cta-wrapper {
                 min-width: 0;
             }
@@ -257,7 +240,7 @@
         
         @media (max-width: 480px) {
             .topbar-container {
-                grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+                grid-template-columns: minmax(0, 1fr) auto;
                 gap: 0.45rem;
                 padding: 0 0.65rem;
             }
@@ -271,14 +254,8 @@
                 font-size: 1.2rem;
             }
 
-            .topbar-status {
-                grid-column: 2;
-                font-size: 0.62rem;
-                letter-spacing: 0.06em;
-            }
-            
             .topbar-cta-wrapper {
-                grid-column: 3;
+                grid-column: 2;
                 align-self: center;
                 justify-self: end;
             }
@@ -286,30 +263,6 @@
             .topbar-cta-wrapper .sss-button-cta {
                 font-size: 0.78rem;
                 padding: 0.48rem 0.65rem;
-            }
-        }
-
-        @media (max-width: 360px) {
-            body.has-topbar {
-                padding-top: 101px;
-            }
-
-            .topbar-container {
-                grid-template-columns: minmax(0, 1fr) auto;
-                min-height: 100px;
-                row-gap: 0.4rem;
-                padding-top: 0.7rem;
-                padding-bottom: 0.7rem;
-            }
-
-            .topbar-status {
-                grid-column: 1 / -1;
-                grid-row: 2;
-                justify-self: center;
-            }
-
-            .topbar-cta-wrapper {
-                grid-column: 2;
             }
         }
     
